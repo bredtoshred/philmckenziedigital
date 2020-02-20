@@ -11,30 +11,31 @@ export default ({ data }) => (
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
       <div className="sheet__inner">
+        <div className="sheet__gallery">
+          <Img fluid={data.datoCmsWork.coverImage.fluid} />
+        </div>
         <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
-        <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
-        {/* <div className="sheet__slider"> */}
-        <Masonry className="showcase">
-          {data.datoCmsWork.gallery.map(({ fluid }) => (
-            <img
-              className="projectImage"
-              alt={data.datoCmsWork.title}
-              key={fluid.src}
-              src={fluid.src}
-            />
-          ))}
-        </Masonry>
-        {/* </div> */}
+        {/* <p className="sheet__lead">{data.datoCmsWork.excerpt}</p> */}
+        <p className="sheet__lead">tools used: {data.datoCmsWork.tools}</p>
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
             __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html
           }}
         />
-        <div className="sheet__gallery">
-          <Img fluid={data.datoCmsWork.coverImage.fluid} />
-        </div>
       </div>
+      {/* <div className="sheet__slider"> */}
+      <Masonry className="showcase">
+        {data.datoCmsWork.gallery.map(({ fluid }) => (
+          <img
+            className="showcase__item"
+            alt={data.datoCmsWork.title}
+            key={fluid.src}
+            src={fluid.src}
+          />
+        ))}
+      </Masonry>
+      {/* </div> */}
     </article>
   </Layout>
 );
@@ -47,6 +48,7 @@ export const query = graphql`
       }
       title
       excerpt
+      tools
       gallery {
         fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
           src
