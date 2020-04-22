@@ -1,11 +1,11 @@
 var plugins = [{
-      plugin: require('/Users/philmckenzie 1/Desktop/philmckenziedigital/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/philmckenzie/Desktop/philmckenziedigital/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/philmckenzie 1/Desktop/philmckenziedigital/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
+      plugin: require('/Users/philmckenzie/Desktop/philmckenziedigital/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/philmckenzie 1/Desktop/philmckenziedigital/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
+      plugin: require('/Users/philmckenzie/Desktop/philmckenziedigital/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[],"trackingId":"UA-158856833-1"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
